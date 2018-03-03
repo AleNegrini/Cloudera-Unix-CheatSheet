@@ -10,3 +10,13 @@ Set the swappiness value (two alternative options)
 [root]$ sysctl vm.swappiness=1
 [root]$ echo "vm.swappiness = 1" >> /etc/sysctl.conf
 ```
+* Disable SELinux
+```
+[root]$ cat /etc/sysconfig/selinux
+- SELINUX=enforcing
++ SELINUX=disabled
+```
+Reboot in order to apply changes
+```
+[root]$ reboot
+```
