@@ -26,3 +26,10 @@ The default file handle limits (aka ulimits) of 1024 for most distributions are 
 [root]$ ulimit -a
 [root]$ ulimit <parameter> <value>
 ```
+* Transparent Huge Page (THP)
+Most Linux platforms supported by CDH 5 include a feature called Transparent Huge Page compaction, which interacts poorly with Hadoop workloads and can seriously degrade performance. 
+Disable Transparent Huge Page compaction since it can degrade the performance of Hadoop workloads
+```
+[root]$ cat /sys/kernel/mm/transparent_hugepage/defrag
+[root]$ echo 'never' > /sys/kernel/mm/transparent_hugepage/defrag
+```
