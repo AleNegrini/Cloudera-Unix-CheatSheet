@@ -10,7 +10,7 @@
 [root]$ cd /etc
 [root]$ visudo 
 ```
-add the following line under the ROOT ALL=(ALL) ALL:
+add the following line under the ROOT ALL=(ALL) PASSWD:ALL
 ```
 <username> ALL=(ALL) ALL
 ```
@@ -27,4 +27,12 @@ Administrator. It usually boils down to these three things:
 
 [sudo] password for <username>: 
 ```
-
+* Run sudo commands without password 
+```
+[root]$ cd /etc
+[root]$ visudo 
+```
+add the following line under the ROOT ALL=(ALL) NOPASSWD:ALL
+```
+<username> ALL=(ALL) NOPASSWD:ALL
+```
