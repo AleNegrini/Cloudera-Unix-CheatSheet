@@ -12,7 +12,7 @@
 ```
 add the following line under the ROOT ALL=(ALL) PASSWD:ALL
 ```
-<username> ALL=(ALL) ALL
++ <username> ALL=(ALL) ALL
 ```
 * Try to check if you can launch sudo commands (with the new username)
 ```
