@@ -34,11 +34,12 @@ Administrator. It usually boils down to these three things:
 ```
 add the following line under the ROOT ALL=(ALL) NOPASSWD:ALL
 ```
-<username> ALL=(ALL) NOPASSWD:ALL
++ <username> ALL=(ALL) NOPASSWD:ALL
 ```
 * In order to allow a user to connect via ssh (via username and password), as root you have to edit file under /etc/ssh/sshd_config
 ```
 [root]$ sudo vi /etc/ssh/sshd_config
+- PasswordAuthentication no
 + PasswordAuthentication yes
 + Allowusers <username> 
 [root]$ service sshd restart
