@@ -20,3 +20,9 @@ Reboot in order to apply changes
 ```
 [root]$ reboot
 ```
+* User Limits
+The default file handle limits (aka ulimits) of 1024 for most distributions are likely not set high enough. 
+```
+[root]$ ulimit -a
+[root]$ ulimit <parameter> <value>
+```
