@@ -1,4 +1,6 @@
 ## Networking
+When configuring Hadoop, you will be required to identify various nodes in Hadoop’s configuration files. Use hostnames, not IP addresses, to identify nodes when configuring Hadoop.
+
 * Get hostname (short name)
 ```
 [root]$ hostname
@@ -14,3 +16,4 @@
 (es. 10.0.3.4 lion.google.com lion)
 ```
 
+DNS is preferred for hostname resolution (rather than /etc/hosts)
