@@ -41,6 +41,6 @@ add the following line under the ROOT ALL=(ALL) NOPASSWD:ALL
 [root]$ sudo vi /etc/ssh/sshd_config
 - PasswordAuthentication no
 + PasswordAuthentication yes
-+ Allowusers <username> 
++ AllowUsers <username> 
 [root]$ service sshd restart
 ```
