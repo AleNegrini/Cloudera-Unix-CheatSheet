@@ -1,3 +1,5 @@
+ # User Management
+ 
  * Create a new user (as root user)
 ```
 sudo su (become root)
