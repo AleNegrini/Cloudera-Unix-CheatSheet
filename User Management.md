@@ -2,17 +2,29 @@
  
  * Create a new user (as root user)
 ```
-sudo su (become root)
-adduser <username>
-passwd <username>
+[root]$ adduser <username>
+[root]$ passwd <username>
 ```
-* Add an existing user among the sudoers one (as root user)
+* Add an existing user among the sudoers one (as root user) by editing the /etc/sudoers file
 ```
-cd /etc
-visudo 
+[root]$ cd /etc
+[root]$ visudo 
 ```
 add the following line under the ROOT ALL=(ALL) ALL:
 ```
 <username> ALL=(ALL) ALL
+```
+* Try to check if you can launch sudo commands (with the new username)
+```
+[root]$ su <username>
+[<username>]$ sudo su 
+We trust you have received the usual lecture from the local System
+Administrator. It usually boils down to these three things:
+
+    #1) Respect the privacy of others.
+    #2) Think before you type.
+    #3) With great power comes great responsibility.
+
+[sudo] password for <username>: 
 ```
 
