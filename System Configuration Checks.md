@@ -1,8 +1,8 @@
-#### System Configuration Checks
+## System Configuration Checks
 In a professional services engagement, Cloudera walks a customer through a questionnaire and supplies a guide to verify hardware, networking, OS configuration, disk mounts, and other properties.
 Using the steps below, verify the settings of your instances.
 
-* Check vm.swappiness on all your nodes
+#### Check vm.swappiness on all your nodes
 ```
 cat /proc/sys/vm/swappiness
 30
