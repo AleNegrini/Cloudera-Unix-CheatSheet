@@ -20,7 +20,7 @@ sudo vi /etc/sysctl.conf
 ```
 [Set swappiness script](https://github.com/AleNegrini/Cloudera-Unix-CheatSheet/blob/master/scripts/set_swappiness_to_one.sh)
 
-#### Show the mount attributes of all volumes
+#### Check the mount attributes of all volumes (*)
 ```
 cat /etc/fstab
 
@@ -42,4 +42,17 @@ tmpfs           3.6G     0  3.6G   0% /dev/shm
 tmpfs           3.6G  8.3M  3.6G   1% /run
 tmpfs           3.6G     0  3.6G   0% /sys/fs/cgroup
 tmpfs           732M     0  732M   0% /run/user/1001
+```
+#### Check that transparent hugepages are disabled
+```
+cat /sys/kernel/mm/transparent_hugepage/defrag
+always madvise [never]
+```
+If not disabled type the following command (this will not survive to a reboot)
+```
+echo "never" > /sys/kernel/mm/transparent_hugepage/defrag
+```
+If you want to make it permanent add this line to /etc/rc.local file
+```
++ echo "never" > /sys/kernel/mm/transparent_hugepage/defrag
 ```
