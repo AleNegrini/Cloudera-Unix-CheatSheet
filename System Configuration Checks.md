@@ -79,3 +79,39 @@ ip a
     inet6 fe80::4001:aff:fe80:2/64 scope link
        valid_lft forever preferred_lft forever
 ```
+#### Set /etc/hosts file
+```
+sudo vi /etc/hosts
++ <ip_address> <fqdn> <shortname>
+```
+#### Show that forward and reverse lookups are working (for each host) 
+```
+getent ahosts lion
+10.128.0.2      STREAM lion.c.cloudera-trial.internal
+10.128.0.2      DGRAM
+10.128.0.2      RAW
+```
+```
+getent ahosts 10.128.0.2
+10.128.0.2      STREAM 10.128.0.2
+10.128.0.2      DGRAM
+10.128.0.2      RAW
+```
+#### Show that forward and reverse lookups are working (for each host) 
+```
+nslookup lion
+Server:         169.254.169.254
+Address:        169.254.169.254#53
+
+Non-authoritative answer:
+Name:   lion.c.cloudera-trial.internal
+Address: 10.128.0.2
+```
+```
+nslookup 10.128.0.2
+Server:         169.254.169.254
+Address:        169.254.169.254#53
+
+Non-authoritative answer:
+2.0.128.10.in-addr.arpa name = lion.c.cloudera-trial.internal.
+```
