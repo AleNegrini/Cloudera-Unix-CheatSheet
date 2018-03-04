@@ -156,3 +156,4 @@ MariaDB [(none)]> grant all on navms.* to 'navms' IDENTIFIED BY 'navms_password'
 Query OK, 0 rows affected (0.00 sec)
 
 ```
+Check in the replica server you can see these databases; 
