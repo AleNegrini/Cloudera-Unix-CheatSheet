@@ -118,3 +118,41 @@ sudo mkdir -p /usr/share/java/
 sudo mv mysql-connector-java-5.1.40/mysql-connector-java-5.1.40-bin.jar /usr/share/java/mysql-connector-java.jar
 ```
 [Script MySql JDBC driver download](https://github.com/AleNegrini/Cloudera-Unix-CheatSheet/blob/master/scripts/download_install_jdbc.sh)
+
+#### Database creation
+```
+MariaDB [(none)]> create database amon DEFAULT CHARACTER SET utf8;
+Query OK, 1 row affected (0.00 sec)
+
+MariaDB [(none)]> create database rman DEFAULT CHARACTER SET utf8;
+Query OK, 1 row affected (0.00 sec)
+
+MariaDB [(none)]> create database metastore DEFAULT CHARACTER SET utf8;
+Query OK, 1 row affected (0.00 sec)
+
+MariaDB [(none)]> create database sentry DEFAULT CHARACTER SET utf8;
+Query OK, 1 row affected (0.00 sec)
+
+MariaDB [(none)]> create database nav DEFAULT CHARACTER SET utf8;
+Query OK, 1 row affected (0.00 sec)
+
+MariaDB [(none)]> create database navms DEFAULT CHARACTER SET utf8;
+Query OK, 1 row affected (0.00 sec)
+
+MariaDB [(none)]> grant all on amon.* to 'amon' IDENTIFIED BY 'amon_password';
+Query OK, 0 rows affected (0.00 sec)
+
+MariaDB [(none)]> grant all on rman.* to 'rman' IDENTIFIED BY 'rman_password';
+Query OK, 0 rows affected (0.00 sec)
+
+MariaDB [(none)]> grant all on metastore.* to 'hive' IDENTIFIED BY 'hive_password';      Query OK, 0 rows affected (0.00 sec)
+
+MariaDB [(none)]> grant all on sentry.* to 'sentry' IDENTIFIED BY 'sentry_password';
+Query OK, 0 rows affected (0.00 sec)
+
+MariaDB [(none)]> grant all on nav.* to 'nav' IDENTIFIED BY 'nav_password';     Query OK, 0 rows affected (0.00 sec)
+
+MariaDB [(none)]> grant all on navms.* to 'navms' IDENTIFIED BY 'navms_password';
+Query OK, 0 rows affected (0.00 sec)
+
+```
