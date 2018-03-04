@@ -19,3 +19,27 @@ sudo vi /etc/sysctl.conf
 + vm.swappiness = 1
 ```
 [Set swappiness script](https://github.com/AleNegrini/Cloudera-Unix-CheatSheet/blob/master/scripts/set_swappiness_to_one.sh)
+
+#### Show the mount attributes of all volumes
+```
+cat /etc/fstab
+
+#
+# /etc/fstab
+# Created by anaconda on Tue Jan 30 02:14:21 2018
+#
+# Accessible filesystems, by reference, are maintained under '/dev/disk'
+# See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) for more info
+#
+UUID=9df472f4-1b0f-41c0-a6eb-89574d2caee3 /                       xfs     defaults        0 0
+```
+```
+df -h
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda1        60G  1.5G   59G   3% /
+devtmpfs        3.6G     0  3.6G   0% /dev
+tmpfs           3.6G     0  3.6G   0% /dev/shm
+tmpfs           3.6G  8.3M  3.6G   1% /run
+tmpfs           3.6G     0  3.6G   0% /sys/fs/cgroup
+tmpfs           732M     0  732M   0% /run/user/1001
+```
