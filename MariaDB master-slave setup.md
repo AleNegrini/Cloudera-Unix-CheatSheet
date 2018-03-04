@@ -117,4 +117,4 @@ tar -zxvf mysql-connector-java-5.1.40.tar.gz
 sudo mkdir -p /usr/share/java/
 sudo mv mysql-connector-java-5.1.40/mysql-connector-java-5.1.40-bin.jar /usr/share/java/mysql-connector-java.jar
 ```
-[Script MySql JDBC driver download]()
+[Script MySql JDBC driver download](https://github.com/AleNegrini/Cloudera-Unix-CheatSheet/blob/master/scripts/download_install_jdbc.sh)
