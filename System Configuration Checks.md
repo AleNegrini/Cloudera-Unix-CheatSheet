@@ -115,3 +115,48 @@ Address:        169.254.169.254#53
 Non-authoritative answer:
 2.0.128.10.in-addr.arpa name = lion.c.cloudera-trial.internal.
 ```
+#### Install and run nscd
+```
+yum install nscd
+service nscd start
+chkconfig nscd on
+nscd -g
+```
+Test if it is running
+```
+service nscd status
+Redirecting to /bin/systemctl status nscd.service
+● nscd.service - Name Service Cache Daemon
+   Loaded: loaded (/usr/lib/systemd/system/nscd.service; enabled; vendor preset: disabled)
+   Active: active (running) since Sun 2018-03-04 10:08:37 UTC; 2min 55s ago
+ Main PID: 13595 (nscd)
+   CGroup: /system.slice/nscd.service
+           └─13595 /usr/sbin/nscd
+```
+#### Install and run ntpd
+
+```
+yum install ntp
+service ntpd start
+chkconfig ntpd on
+```
+Test if it is running
+```
+service ntpd status
+Redirecting to /bin/systemctl status ntpd.service
+● ntpd.service - Network Time Service
+   Loaded: loaded (/usr/lib/systemd/system/ntpd.service; enabled; vendor preset: disabled)
+   Active: active (running) since Sun 2018-03-04 10:21:32 UTC; 47s ago
+  Process: 11721 ExecStart=/usr/sbin/ntpd -u ntp:ntp $OPTIONS (code=exited, status=0/SUCCESS)
+ Main PID: 11722 (ntpd)
+   CGroup: /system.slice/ntpd.service
+           └─11722 /usr/sbin/ntpd -u ntp:ntp -g
+```
+Synchronize the node
+```
+ntpdate -u <your_ntp_server>
+```
+Synchronize the system clock (to prevent synchronization problems)
+```
+hwclock --systohc
+```
