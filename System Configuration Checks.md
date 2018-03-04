@@ -52,7 +52,7 @@ If not disabled type the following command (this will not survive to a reboot)
 ```
 echo "never" > /sys/kernel/mm/transparent_hugepage/defrag
 ```
-If you want to make it permanent add this line to /etc/rc.local file
+If you want to make it permanent add this line to __/etc/rc.local__ file
 ```
 + echo "never" > /sys/kernel/mm/transparent_hugepage/defrag
 ```
