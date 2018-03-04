@@ -18,3 +18,4 @@ And then add this line in order to change it permanently
 sudo vi /etc/sysctl.conf
 + vm.swappiness = 1
 ```
+[Set swappiness script](https://github.com/AleNegrini/Cloudera-Unix-CheatSheet/blob/master/scripts/set_swappiness_to_one.sh)
