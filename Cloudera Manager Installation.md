@@ -43,6 +43,11 @@ sudo yum install cloudera-manager-server
 sudo yum install cloudera-manager-daemons
 ```
 
+__Important__
+```
+/usr/share/cmf/schema/scm_prepare_database.sh database-type [options] database-name username password
+```
+
 Finally run it 
 ```
 sudo service cloudera-scm-server start
